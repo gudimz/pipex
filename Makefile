@@ -1,4 +1,4 @@
-.PHONY:		all re clean fclean norme debug
+.PHONY:		all re clean fclean norme debug test
 
 NAME = pipex
 SRCDIR = ./src/
@@ -29,6 +29,9 @@ tools:
 norme: fclean
 		norminette $(SRC_PIPEX) ./includes/*
 		make -C $(LIBFTDIR) norme
+test: all
+		cp ./pipex ./test/pipex
+		./test/test.sh
 clean:
 		rm -f $(OBJS) $(D_FILES)
 		make -C $(LIBFTDIR) clean

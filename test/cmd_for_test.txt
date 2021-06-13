@@ -1,3 +1,0 @@
-./pipex ./src/infile.tt "grep ?" "wc -w" ./src/outfile.txt
-
-./pipex ./test/infile.txt "grep yes" "wc -w" "cat -e" ./test/outfile.txt
