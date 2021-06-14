@@ -52,13 +52,13 @@ rm -rf my_error.txt
 
 ./pipex my_infile.txt "grep ?" "wc -w" my_outfile.txt
 
-< or_infile.txt grep "?" | wc -l > or_outfile.txt
+< or_infile.txt grep "?" | wc -w > or_outfile.txt
 
 echo "\n====================================================================================="
 echo "\e[1;37m*************************************\e[1;32m TEST №4 \e[0m\e[1;37m***************************************\n"
 
 echo "\e[1;34m           ./pipex \e[1;32m my_infile.txt \e[0m \e[1;31m [grep ?] [wc -w] \e[0m \e[1;32m my_outfile.txt \e[0m\n"
-echo "\e[1;32m             < or_infile.txt \e[1;31m [grep ?] \e[1;32m | \e[1;31m [wc -w] \e[1;32m > or_outfile.txt\e[0m\n"
+echo "\e[1;32m             < or_infile.txt \e[1;31m [grep ?] \e[1;34m | \e[1;31m [wc -w] \e[1;32m > or_outfile.txt\e[0m\n"
 
 diff or_outfile.txt my_outfile.txt
 
@@ -79,13 +79,13 @@ rm -rf or_outfile.txt
 
 ./pipex my_infile.txt "/usr/bin/grep ?" "/usr/bin/wc -w" my_outfile.txt
 
-< or_infile.txt /usr/bin/grep "?" | /usr/bin/wc -l > or_outfile.txt
+< or_infile.txt /usr/bin/grep "?" | /usr/bin/wc -w > or_outfile.txt
 
 echo "\n====================================================================================="
 echo "\e[1;37m*************************************\e[1;32m TEST №5 \e[0m\e[1;37m***************************************\n"
 
 echo "\e[1;34m    ./pipex \e[1;32m my_infile.txt \e[0m \e[1;31m [/usr/bin/grep ?] [/usr/bin/wc -w] \e[0m \e[1;32m my_outfile.txt \e[0m\n"
-echo "\e[1;32m      < or_infile.txt \e[1;31m [/usr/bin/grep ?] \e[1;32m | \e[1;31m [/usr/bin/wc -w] \e[1;32m > or_outfile.txt\e[0m\n"
+echo "\e[1;32m      < or_infile.txt \e[1;31m [/usr/bin/grep ?] \e[1;34m | \e[1;31m [/usr/bin/wc -w] \e[1;32m > or_outfile.txt\e[0m\n"
 
 diff or_outfile.txt my_outfile.txt
 
@@ -106,13 +106,13 @@ rm -rf or_outfile.txt
 
 ./pipex my_infile.txt "grep ?" "wc -w" "cat -e" "cat -e" my_outfile.txt
 
-< or_infile.txt grep "?" | wc -l | cat -e | cat -e > or_outfile.txt
+< or_infile.txt grep "?" | wc -w | cat -e | cat -e > or_outfile.txt
 
 echo "\n====================================================================================="
 echo "\e[1;37m*************************************\e[1;32m TEST №6 \e[0m\e[1;37m***************************************\n"
 
 echo "\e[1;34m    ./pipex \e[1;32m my_infile.txt \e[0m \e[1;31m [grep ?] [wc -w] [cat -e] [cat -e] \e[0m \e[1;32m my_outfile.txt \e[0m\n"
-echo "\e[1;32m < or_infile.txt \e[1;31m [grep ?] \e[1;32m | \e[1;31m [wc -w] \e[1;32m | \e[1;31m [cat -e] \e[1;32m | \e[1;31m [cat -e] \e[1;32m > or_outfile.txt\e[0m\n"
+echo "\e[1;32m < or_infile.txt \e[1;31m [grep ?] \e[1;34m | \e[1;31m [wc -w] \e[1;34m | \e[1;31m [cat -e] \e[1;34m | \e[1;31m [cat -e] \e[1;32m > or_outfile.txt\e[0m\n"
 
 diff or_outfile.txt  my_outfile.txt
 

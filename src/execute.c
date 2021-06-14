@@ -6,13 +6,13 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 15:40:08 by agigi             #+#    #+#             */
-/*   Updated: 2021/06/14 13:52:55 by agigi            ###   ########.fr       */
+/*   Updated: 2021/06/14 21:26:11 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-void	ft_error_execve(char *cmd)
+static void	ft_error_execve(char *cmd)
 {
 	ft_putstr_fd("Error: ", 2);
 	ft_putstr_fd(cmd, 2);
@@ -20,7 +20,7 @@ void	ft_error_execve(char *cmd)
 	exit(1);
 }
 
-void	ft_execve(t_data *data, char **argv, char **env)
+static void	ft_execve(t_data *data, char **argv, char **env)
 {
 	char	*full_path;
 	char	**cmd_argv;

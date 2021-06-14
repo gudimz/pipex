@@ -6,13 +6,13 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 16:43:42 by agigi             #+#    #+#             */
-/*   Updated: 2021/06/12 21:48:55 by agigi            ###   ########.fr       */
+/*   Updated: 2021/06/14 21:25:59 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-char	**ft_full_path(t_data *data, char **argv, char **all_path)
+static char	**ft_full_path(t_data *data, char **argv, char **all_path)
 {
 	char	*tmp;
 	char	**name_cmd;
@@ -34,7 +34,7 @@ char	**ft_full_path(t_data *data, char **argv, char **all_path)
 	return (all_path);
 }
 
-char	**ft_init_path(t_data *data, char **argv, char **env)
+static char	**ft_init_path(t_data *data, char **argv, char **env)
 {
 	char	**all_path;
 	char	*tmp;
@@ -56,7 +56,7 @@ char	**ft_init_path(t_data *data, char **argv, char **env)
 	return (all_path);
 }
 
-char	*ft_one_path(char **all_path)
+static char	*ft_one_path(char **all_path)
 {
 	int			i;
 	char		*path;

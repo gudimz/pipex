@@ -6,13 +6,13 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 14:03:17 by agigi             #+#    #+#             */
-/*   Updated: 2021/06/13 00:47:22 by agigi            ###   ########.fr       */
+/*   Updated: 2021/06/14 21:25:40 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-void	ft_pipe_right(t_data *data, char **argv, char **env)
+static void	ft_pipe_right(t_data *data, char **argv, char **env)
 {
 	int	save_fd[2];
 	int	fd[2];
@@ -39,7 +39,7 @@ void	ft_pipe_right(t_data *data, char **argv, char **env)
 	close(fd[1]);
 }
 
-void	ft_pipe_left(t_data *data, int argc, char **argv, char **env)
+static void	ft_pipe_left(t_data *data, int argc, char **argv, char **env)
 {
 	int	save_fd[2];
 
@@ -67,7 +67,7 @@ void	ft_pipe_left(t_data *data, int argc, char **argv, char **env)
 	close(save_fd[1]);
 }
 
-void	ft_pipe_double(t_data *data, char **argv, char **env)
+static void	ft_pipe_double(t_data *data, char **argv, char **env)
 {
 	t_descript	save_fd;
 	int			fd[2];
