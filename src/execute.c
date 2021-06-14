@@ -6,7 +6,7 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 15:40:08 by agigi             #+#    #+#             */
-/*   Updated: 2021/06/13 01:34:44 by agigi            ###   ########.fr       */
+/*   Updated: 2021/06/14 13:52:55 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,14 @@ void	ft_execve(t_data *data, char **argv, char **env)
 	char	*full_path;
 	char	**cmd_argv;
 
-	full_path = ft_find_path(data, argv, env);
 	cmd_argv = ft_split(argv[data->cmd], ' ');
-	if (execve(full_path, cmd_argv, env) == -1)
-		ft_error_execve(argv[data->cmd]);
-	free(full_path);
+	if (execve(cmd_argv[0], cmd_argv, env) == -1)
+	{
+		full_path = ft_find_path(data, argv, env);
+		if (execve(full_path, cmd_argv, env) == -1)
+			ft_error_execve(argv[data->cmd]);
+		free(full_path);
+	}
 	free(cmd_argv);
 }
 

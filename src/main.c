@@ -6,7 +6,7 @@
 /*   By: agigi <agigi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 01:32:13 by agigi             #+#    #+#             */
-/*   Updated: 2021/06/13 01:34:27 by agigi            ###   ########.fr       */
+/*   Updated: 2021/06/14 15:59:48 by agigi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_error_message(char *message)
 {
 	ft_putstr_fd(message, 2);
-	exit(1);
+	exit(0);
 }
 
 int	main(int argc, char **argv, char **env)
