@@ -1,4 +1,4 @@
-# pipex.
+# Pipex. Project for school 21 (ecole 42)
 -------------
 
 ### Instructions.
