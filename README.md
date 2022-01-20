@@ -17,7 +17,7 @@ should be the same as `“< infile ls -l | wc -l > outfile”`
 should be the same as `“< infile grep a1 | wc -w > outfile”`
 ***
 
-### How to use?.
+### How to use?
 ------------------------------
 
 `make`
@@ -25,7 +25,7 @@ should be the same as `“< infile grep a1 | wc -w > outfile”`
 `$> ./pipex file1 cmd1 cmd2 file2`
 ***
 
-### How to use test?.
+### How to use test?
 ------------------------------
 
 `make test`
